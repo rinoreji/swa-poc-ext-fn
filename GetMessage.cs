@@ -7,6 +7,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace swa_poc_ext_fn
@@ -23,7 +24,7 @@ namespace swa_poc_ext_fn
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var headers = new List<string>();
-            foreach (var key in req.Headers.Keys)
+            foreach (var key in req.Headers.Keys.OrderBy(k=>k))
             {
                 headers.Add($"{key}-{req.Headers[key]}");
             }
