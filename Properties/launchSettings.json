@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "swa_poc_ext_fn": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7045",
+      "launchBrowser": false
+    }
+  }
+}
