@@ -17,7 +17,6 @@ namespace swa_poc_ext_fn
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
 
             string[] roles = { "admin","custom-role1" };
             return new JsonResult(new { roles });
